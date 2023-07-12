@@ -27,3 +27,41 @@ const restaurant = {
     },
   },
 };
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// destructuring assignment
+const [x, y, z] = arr;
+
+console.log(a, b, c);
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+// switch main and secondary
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+//switch main and secondary with destructuring
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+//destructuring nested array
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
+
+//destructuring nested array immediately
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+//default values
+//const [p, q, r] = [8, 9]; // when not find position 2 sets undefined
+const [p = 1, q = 1, r = 1] = [8, 9]; // when not find some position sets 1 by default because =1
+console.log(p, q, r);
