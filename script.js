@@ -26,8 +26,61 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    time: t,
+    address,
+    mainIndex = 0,
+    starterIndex = 0,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${t}`
+    );
+  },
 };
 
+// DESTRUCTURING OBJECTS
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//choose the name of new variables
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+//set default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+//mutating variables
+let a = 111;
+let b = 222;
+const obj = { a: 1, b: 2, c: 3 };
+({ a, b } = obj);
+console.log(a, b);
+
+// destructuring nested objects
+const {
+  sat: { open: o, close: c },
+} = openingHours;
+console.log(o, c);
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del sole, 21',
+  mainIndex: 2,
+  starterIndex: 1,
+});
+
+// DESTRUCTURING ARRAYS
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -65,3 +118,8 @@ console.log(i, j, k);
 //const [p, q, r] = [8, 9]; // when not find position 2 sets undefined
 const [p = 1, q = 1, r = 1] = [8, 9]; // when not find some position sets 1 by default because =1
 console.log(p, q, r);
+
+//destructuring two values from function return
+const [starter, main] = restaurant.order(0, 1);
+console.log(starter, main);
+*/
