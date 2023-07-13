@@ -41,8 +41,58 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${t}`
     );
   },
+
+  orderPasta: function (ingredient1, ingredient2, ingredient3) {
+    console.log(
+      `Here is your delicious pasta with ${ingredient1}, ${ingredient2}, ${ingredient3}`
+    );
+  },
 };
 
+// SPREAD OPERATOR ...
+
+const arr = [3, 4, 5];
+const badArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badArr);
+
+//spread array arr
+const goodArr = [1, 2, ...arr];
+console.log(goodArr);
+
+console.log(...goodArr);
+console.log(1, 2, 3, 4, 5); //same as ...goodArr
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+//copy array
+const menuCopy = [...restaurant.mainMenu];
+
+//join more than one array
+const joinArr = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(joinArr);
+
+// SPREAD OPERATOR WORKS WITH ALL ITERABLES
+// THEY ARE: ARRAYS, STRINGS, MAPS, SETS
+// THEY ARE NOT: OBJECTS
+const myName = 'Alexandre Halas';
+const letters = [...myName];
+console.log(letters);
+
+const ingredients = ['Garlic', 'Oil', 'Salt'];
+restaurant.orderPasta(...ingredients);
+
+//SINCE ES2018 SPREAD OPERATOR WORKS WITH OBJECTS
+const newRestaurant = { ...restaurant, founder: 'Alexandre' };
+console.log(newRestaurant);
+
+//copy object
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'New Name';
+console.log(restaurant.name);
+console.log(restaurantCopy.name);
+
+/*
 // DESTRUCTURING OBJECTS
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -78,6 +128,7 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 1,
 });
+*/
 
 // DESTRUCTURING ARRAYS
 /*
