@@ -54,6 +54,46 @@ const restaurant = {
   },
 };
 
+// LOGICAL ASSINGMENT OPERATORS ES2021
+
+const rest1 = {
+  name: 'Capri',
+  numberGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Jose Maria',
+};
+
+// OR ASSINGMENT OPERATOR
+
+//rest1.numberGuests = rest1.numberGuests || 10;
+//rest2.numberGuests = rest2.numberGuests || 10;
+
+// rest1.numberGuests ||= 10;
+// rest2.numberGuests ||= 10;
+
+// console.log(rest1.numberGuests);
+// console.log(rest2.numberGuests);
+
+// NULLISH COALESCING ASSINGMENT OPERATOR
+
+rest1.numberGuests ??= 10;
+rest2.numberGuests ??= 10;
+
+console.log(rest1.numberGuests);
+console.log(rest2.numberGuests);
+
+// AND ASSINGMENT OPERATOR
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1.owner);
+console.log(rest2.owner);
+/*
 // NULLISH COALESCING OPERATOR ES2020
 
 //restaurant.numGuests = 0;
@@ -63,6 +103,7 @@ console.log(guests);
 //nullish values: null and undefined (NOT 0 or '')
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
+*/
 
 /*
 // SHORT CIRCUITING
