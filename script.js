@@ -54,6 +54,7 @@ const restaurant = {
   },
 };
 
+/*
 // LOGICAL ASSINGMENT OPERATORS ES2021
 
 const rest1 = {
@@ -93,6 +94,8 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1.owner);
 console.log(rest2.owner);
+*/
+
 /*
 // NULLISH COALESCING OPERATOR ES2020
 
