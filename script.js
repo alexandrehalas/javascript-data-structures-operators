@@ -54,6 +54,17 @@ const restaurant = {
   },
 };
 
+// NULLISH COALESCING OPERATOR ES2020
+
+//restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10; // false -> 10
+console.log(guests);
+
+//nullish values: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*
 // SHORT CIRCUITING
 // USE any data type, return ANY data type, is called short-circuiting
 
@@ -84,6 +95,7 @@ if (restaurant.orderPizza) {
 }
 // same as
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'bacon');
+*/
 
 /*
 // REST PATTERN AND PARAMETERS used to collect multiple elements and condense them into an array, the opposite of spread operator
