@@ -47,9 +47,45 @@ const restaurant = {
       `Here is your delicious pasta with ${ingredient1}, ${ingredient2}, ${ingredient3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log('main ingredient', mainIngredient);
+    console.log('others ingredients', otherIngredients);
+  },
 };
 
-// SPREAD OPERATOR ...
+// REST PATTERN AND PARAMETERS used to collect multiple elements and condense them into an array, the opposite of spread operator
+
+// SPREAD, because on RIGHT side of assingment '='
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of assingment '='
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+// the rest need be allways the last parameter, because it collect the rest of the array
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+//functions
+//rest take multiple values and pack into array
+const add = function (...numbers) {
+  console.log(numbers);
+};
+add(1, 2, 3, 4);
+
+restaurant.orderPizza('mushrooms', 'onions', 'cheese');
+restaurant.orderPizza('mushrooms');
+
+/*
+// SPREAD OPERATOR '...' used to build new arrays or to pass multiple values into a function
+// expand an array into individual elements
 
 const arr = [3, 4, 5];
 const badArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -91,6 +127,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'New Name';
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+*/
 
 /*
 // DESTRUCTURING OBJECTS
