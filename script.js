@@ -54,6 +54,38 @@ const restaurant = {
   },
 };
 
+// SHORT CIRCUITING
+// USE any data type, return ANY data type, is called short-circuiting
+
+console.log('---- OR, return the first true----');
+
+console.log(21 || 'Halas'); // true -> 21
+console.log('' || 'Halas'); // false true -> Halas
+console.log(true || 0); // true -> true
+console.log(undefined || null); // false false -> null
+
+console.log(undefined || '' || null || 0 || 'Halas'); // false false false false true -> Halas
+
+restaurant.numGuests = 23;
+const guests = restaurant.numGuests || 10; // true -> 23
+console.log(guests);
+
+console.log('---- AND, return the first false ----');
+
+console.log(21 && 'Halas'); // true true -> 'Halas'
+console.log('' && 'Halas'); // false -> ''
+console.log(true && 0); // true false -> 0
+console.log(undefined && null); // false -> undefined
+console.log(undefined && '' && null && 0 && 'Halas'); // false -> undefined
+
+// this is
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'bacon');
+}
+// same as
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'bacon');
+
+/*
 // REST PATTERN AND PARAMETERS used to collect multiple elements and condense them into an array, the opposite of spread operator
 
 // SPREAD, because on RIGHT side of assingment '='
@@ -82,6 +114,7 @@ add(1, 2, 3, 4);
 
 restaurant.orderPizza('mushrooms', 'onions', 'cheese');
 restaurant.orderPizza('mushrooms');
+*/
 
 /*
 // SPREAD OPERATOR '...' used to build new arrays or to pass multiple values into a function
