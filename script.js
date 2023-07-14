@@ -54,6 +54,26 @@ const restaurant = {
   },
 };
 
+// LOOPING ARRAYS
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+for (const menuItem of menu) {
+  console.log(menuItem);
+}
+
+for (const menuItem of menu.entries()) {
+  console.log(menuItem);
+}
+
+for (const menuItem of menu.entries()) {
+  console.log(`${menuItem[0] + 1}: ${menuItem[1]}`);
+}
+
+for (const [item, value] of menu.entries()) {
+  console.log(`${item + 1}: ${value}`);
+}
+
 /*
 // LOGICAL ASSINGMENT OPERATORS ES2021
 
