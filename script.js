@@ -62,6 +62,7 @@ const restaurant = {
   },
 };
 
+/*
 // LOOPING OBJECTS: Object Keys, Values, Entries
 
 console.log('object:', openingHours);
@@ -91,6 +92,7 @@ console.log('object entries:', propertyEntries);
 for (const [key, { open, close }] of propertyEntries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+*/
 
 /*
 // OPTIONAL CHAINING ES2020
