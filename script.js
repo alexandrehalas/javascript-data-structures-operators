@@ -62,6 +62,32 @@ const restaurant = {
   },
 };
 
+// OPTIONAL CHAINING ES2020
+
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+// with optional chaining
+restaurant.openingHours?.mon?.open;
+
+// examples
+
+for (const day of weekdays) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// in methods
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderPotato?.(0, 1) ?? 'Method does not exist');
+
+// in arrays
+
+//const users = [{ name: 'Halas', email: 'halas@email.com' }];
+const users = [];
+console.log(users[0]?.name ?? 'User array empty');
+
 // ENHANCED OBJECT LITERALS
 
 /*
