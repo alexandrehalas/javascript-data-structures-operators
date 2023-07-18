@@ -62,6 +62,37 @@ const restaurant = {
   },
 };
 
+// LOOPING OBJECTS: Object Keys, Values, Entries
+
+console.log('object:', openingHours);
+
+// property NAMES
+
+const propertyNames = Object.keys(openingHours);
+console.log('object keys:', propertyNames);
+
+let message = `Restaurant is open ${propertyNames.length} days on week: `;
+
+for (const day of propertyNames) {
+  message += `${day}, `;
+}
+console.log(message);
+
+// property values
+
+const propertyValues = Object.values(openingHours);
+console.log('object values:', propertyValues);
+
+// property entries
+
+const propertyEntries = Object.entries(openingHours);
+console.log('object entries:', propertyEntries);
+
+for (const [key, { open, close }] of propertyEntries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+/*
 // OPTIONAL CHAINING ES2020
 
 if (restaurant.openingHours && restaurant.openingHours.mon) {
@@ -87,6 +118,8 @@ console.log(restaurant.orderPotato?.(0, 1) ?? 'Method does not exist');
 //const users = [{ name: 'Halas', email: 'halas@email.com' }];
 const users = [];
 console.log(users[0]?.name ?? 'User array empty');
+
+*/
 
 // ENHANCED OBJECT LITERALS
 
