@@ -63,7 +63,7 @@ const restaurant = {
 };
 
 // ES6 MORE DATA STRUCTURES
-
+/*
 // Maps iteration
 
 const question = new Map([
@@ -97,6 +97,7 @@ console.log([...question]);
 
 console.log([...question.keys()]);
 console.log([...question.values()]);
+*/
 /*
 // Maps: used to map values to keys, in maps keys can has any types
 
