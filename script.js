@@ -64,7 +64,43 @@ const restaurant = {
 
 // ES6 MORE DATA STRUCTURES
 
+// Maps iteration
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'Correct 😆'],
+  [false, 'Try again 🤔'],
+]);
+
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+//const answer = prompt('Your answer');
+//console.log(question.get(question.get('correct') === Number(answer)));
+
+// Convert map to array
+console.log([...question]);
+
+console.log([...question.keys()]);
+console.log([...question.values()]);
+/*
 // Maps: used to map values to keys, in maps keys can has any types
+
+// Fundamentals
 
 const rest = new Map();
 rest.set('name', 'Classico Italiano');
@@ -108,7 +144,7 @@ console.log(rest);
 console.log(rest.size);
 
 console.log(rest.get(arr));
-
+*/
 /*
 // Sets collections of unique values
 
