@@ -64,6 +64,52 @@ const restaurant = {
 
 // ES6 MORE DATA STRUCTURES
 
+// Maps: used to map values to keys, in maps keys can has any types
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'Open')
+  .set(false, 'Close');
+
+console.log(rest);
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+console.log(rest.get(8));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest.has(2));
+console.log(rest.size);
+rest.clear();
+console.log(rest.size);
+
+rest.set([1, 2], 'Test');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get([1, 2]));
+
+const arr = [1, 2, 3];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
+/*
 // Sets collections of unique values
 
 console.log(new Set('Halas'));
@@ -97,6 +143,7 @@ const staffUnique = [...new Set(staff)];
 console.log(staffUnique);
 
 console.log(new Set('How different letters in the string').size);
+*/
 
 /*
 // LOOPING OBJECTS: Object Keys, Values, Entries
