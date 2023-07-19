@@ -62,6 +62,42 @@ const restaurant = {
   },
 };
 
+// ES6 MORE DATA STRUCTURES
+
+// Sets collections of unique values
+
+console.log(new Set('Halas'));
+
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pizza']);
+console.log(orderSet);
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+
+orderSet.delete('Pizza');
+console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
+orderSet.clear();
+console.log(orderSet);
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+console.log(staff);
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set('How different letters in the string').size);
+
 /*
 // LOOPING OBJECTS: Object Keys, Values, Entries
 
