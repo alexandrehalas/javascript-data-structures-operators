@@ -65,6 +65,58 @@ const restaurant = {
 const airline = 'TAP Air Portugal';
 const plane = 'A320neo';
 
+// WORKING WITH STRINGS PT 3
+
+// Split and Join
+console.log('a+b+c+d+e'.split('+'));
+console.log('Alexandre Halas'.split(' '));
+
+const [firstName, lastName] = 'Alexandre Halas'.split(' ');
+
+console.log(firstName, lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const passenger = 'jessica ann smith davis';
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const capitalizedNames = [];
+  for (const n of names) {
+    //capitalizedNames.push(n[0].toUpperCase() + n.slice(1));
+    capitalizedNames.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  return capitalizedNames.join(' ');
+};
+
+console.log(capitalizeName(passenger));
+console.log(capitalizeName('alexandre halas'));
+
+// padding
+
+const message = 'Go to gate 23!';
+console.log(''.padStart(30, '+'));
+console.log(message.padStart(22, '+').padEnd(30, '-'));
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(2186129915));
+console.log(maskCreditCard(84567485163156));
+console.log(maskCreditCard(1234156412315644789));
+
+// Repeat
+
+const message2 = 'Bad weater... All Departues Delayed...\n';
+
+console.log(message2.repeat(5));
+
+// WORKING WITH STRINGS PT 2
+/*
 console.log(airline.toUpperCase());
 console.log(airline.toLowerCase());
 
@@ -108,6 +160,7 @@ console.log(plane.includes('Boeing'));
 console.log(plane.startsWith('A3'));
 console.log(plane.startsWith('B'));
 console.log(plane.endsWith('neo'));
+*/
 
 // WORKING WITH STRINGS PT 1
 /*
