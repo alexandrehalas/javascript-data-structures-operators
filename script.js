@@ -62,6 +62,45 @@ const restaurant = {
   },
 };
 
+// WORKING WITH STRINGS PT 1
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0], plane[1], plane[2], plane[3]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.lastIndexOf('Portugal'));
+console.log(airline.lastIndexOf('portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.indexOf(' ') + 1));
+console.log(airline.slice(-8));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  console.log(s === 'B' || s === 'E');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log('Halas');
+console.log(typeof 'Halas');
+
+console.log(new String('Halas'));
+console.log(typeof new String('Halas'));
+console.log(typeof new String('Halas').slice(2));
+
 // ES6 MORE DATA STRUCTURES
 /*
 // Maps iteration
