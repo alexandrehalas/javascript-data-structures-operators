@@ -62,8 +62,55 @@ const restaurant = {
   },
 };
 
-// WORKING WITH STRINGS PT 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320neo';
 
+console.log(airline.toUpperCase());
+console.log(airline.toLowerCase());
+
+// FIX captilization
+
+const passenger = 'haLAs';
+const passagerLowerCase = passenger.toLowerCase();
+const passagerCorrect =
+  passagerLowerCase[0].toUpperCase() + passagerLowerCase.slice(1);
+console.log(passagerCorrect);
+
+// Check e-mail
+
+const email = 'halas@email.com';
+const loginEmail = '   haLAs@Email.COM   \n';
+
+const loginEmailLowerCase = loginEmail.toLowerCase();
+const loginEmailTrimmed = loginEmailLowerCase.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+
+const priceReal = 'R$288,97';
+const priceUS = priceReal.replace('R$', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!!!';
+
+console.log(announcement.replaceAll('door', 'gate'));
+//regular expressions
+console.log(announcement.replaceAll(/door/g, 'gate'));
+
+//Booleans
+
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('A3'));
+console.log(plane.startsWith('B'));
+console.log(plane.endsWith('neo'));
+
+// WORKING WITH STRINGS PT 1
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -100,6 +147,7 @@ console.log(typeof 'Halas');
 console.log(new String('Halas'));
 console.log(typeof new String('Halas'));
 console.log(typeof new String('Halas').slice(2));
+*/
 
 // ES6 MORE DATA STRUCTURES
 /*
